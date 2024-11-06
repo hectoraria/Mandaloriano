@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Mandaloriano";
+@model Mandaloriano.VM.MostrarMisiones
+
+}
+
+<body>
+
+    @if (Model.listadoMisiones == null)
+    {
+        <h1>Pagina Cerrada hasta las 8:00</h1>
+    }
+    else
+    {
+        <h1>Listado Misiones</h1>
+        <form method="post">
+
+            <select id="desplegableMisiones">
+                @foreach(var mision in Model.listadoMisiones)
+                {
+                    <option value="@mision.Id">@mision.Nombre</option>
+                }
+            </select>
+            <input type="submit" value="Descripcion"/>
+
+            
+        </form>
+        if (Model.misionSelecionada !=null)
+        {
+            <h3>@Model.misionSelecionada.Nombre</h3>
+            <h5>@Model.misionSelecionada.Recompensa</h5>
+            <p>@Model.misionSelecionada.Descripcion</p>
+            <input type="submit" value="Aceptar" />
+        }
+    }
+
+</body>
