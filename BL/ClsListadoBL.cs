@@ -13,14 +13,15 @@ namespace BL
         {
             List<ClsMision> lista;
 
-            if (TimeOnly.FromDateTime(DateTime.Now) >= new TimeOnly(8, 0) && TimeOnly.FromDateTime(DateTime.Now) <= new TimeOnly(12, 0))
-            {
+            //if (TimeOnly.FromDateTime(DateTime.Now) >= new TimeOnly(8, 0) && TimeOnly.FromDateTime(DateTime.Now) < new TimeOnly(12, 0))
+            //{
                 lista = ClsListadoDAL.listadosMisionesDAL();
-            }
-            else
-            {
-                lista = null;
-            }
+            //}
+            //else
+            //{
+            //    lista = null;
+            //}
+
 
             return lista;
         }
