@@ -1,0 +1,45 @@
+﻿DAL
+	// Lo utilizaremos para obtener el listado de Misiones
+	List <ClsMision> ListadoCompletoMisionesDAL
+	public static List<ClsMision> listadosMisionesDAL()
+	public static ClsMision SelecionarMisionDAL(int Id)
+
+ENT
+	// La usaremos para guardar cada tarea del mandaloriano
+	ClsMision
+		Int IdMision (get)
+		String Titulo (get,set)
+		String Descripcion (get,set)
+		Double Recompensa (get,set)
+
+	public ClsMision()
+	public ClsMision(long id, string nombre, string descripcion, double recompensa)
+
+
+BL 
+	//Lista con de las misiones con la norma del tiempo
+	public static List<ClsMision> listadoMisionesBL()
+	//Metodo para selecionar el objeto de la lista ClsMision
+	public static ClsMision SelecionarMisionBL(int Id)
+	
+
+VM
+	//Propiedad de tipo ClsMision para selecionar la mision
+	public ClsMision misionSelecionada {  get; set; }
+	//Propiedad de tipo lista de objetos de ClsMision
+    public List<ClsMision> listadoMisiones { get; set; }
+
+
+UI
+
+	Controllers
+	//Llamo a la propiedad del ViewModel para recoger la lista utilizare el metodo del BL
+	 viewm.listadoMisiones=ClsListadoBL.listadoMisionesBL();
+		//Devuelvo en la view el viewm
+
+	[HttpPost]
+	//Para seleccionar la mision de la lista pido en el IActionResult un id
+		viewm.listadoMisiones = ClsListadoBL.listadoMisionesBL();
+		viewm.misionSelecionada=ClsListadoBL.SelecionarMisionBL(id);
+
+		//Devuelvo en la view el viewm

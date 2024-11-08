@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vmodel="clr-namespace:MandalorianoMaui.VM"
+             x:Class="MandalorianoMaui.Views.MainPage">
+
+    <ContentPage.BindingContext>
+        <vmodel:MostrarMisiones></vmodel:MostrarMisiones>
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <VerticalStackLayout>
+            <Picker Title="Selecionar Mision" 
+                    ItemsSource="{Binding ListadosMisiones}"
+                    ItemDisplayBinding="{Binding ListadosMisiones}"
+                    SelectedItem="{Binding MisionSelecionada}"/>
+            <Label Text="{Binding MisionSelecionada.Nombre}"></Label>
+            <Label Text="{Binding MisionSelecionada.Recompensa}"></Label>
+            <Label Text="{Binding MisionSelecionada.Recompensa}"></Label>
+            
+            
+            
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

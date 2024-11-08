@@ -6,7 +6,7 @@ using System.Diagnostics;
 
 namespace Mandaloriano.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : Controller 
     {
         
 

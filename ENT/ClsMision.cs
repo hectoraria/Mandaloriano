@@ -5,7 +5,7 @@
 
         #region Propiedades
 
-        public long Id {  get;  }
+        public int Id { get; set; }
 
         public string Nombre {  get; set; }
 
@@ -18,7 +18,7 @@
             
         public ClsMision() { }
 
-        public ClsMision(long id, string nombre, string descripcion, double recompensa)
+        public ClsMision(int id, string nombre, string descripcion, double recompensa)
         {
             Id = id;
             Nombre = nombre;

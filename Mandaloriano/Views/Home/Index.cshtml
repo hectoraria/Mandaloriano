@@ -12,10 +12,10 @@
     }
     else
     {
-        <h1>Listado Misiones</h1>
+        <h1>Listado Misiones:</h1>
         <form method="post">
 
-            <select id="desplegableMisiones">
+            <select id="desplegableMisiones" name="id">
                 @foreach(var mision in Model.listadoMisiones)
                 {
                     <option value="@mision.Id">@mision.Nombre</option>
